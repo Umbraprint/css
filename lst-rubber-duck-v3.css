@@ -1,0 +1,452 @@
+/*
+  LST Rubber Duck Theme v3.0
+  Standalone light theme with heavier decorative duck styling.
+  Install on LST via: Settings -> General -> External CSS Stylesheet
+  Best used with LST Site Style = Light.
+*/
+
+:root {
+  --duck-bg: #ffe68a;
+  --duck-bg-2: #fff7d3;
+  --duck-bg-3: #fff1b5;
+  --duck-panel: rgba(255, 251, 238, 0.95);
+  --duck-panel-2: rgba(255, 246, 214, 0.96);
+  --duck-panel-3: rgba(255, 235, 170, 0.96);
+  --duck-border: #ebc25f;
+  --duck-border-strong: #d8a73f;
+  --duck-text: #553715;
+  --duck-text-soft: #7e5b28;
+  --duck-link: #b36b00;
+  --duck-link-hover: #d88600;
+  --duck-button: #ffcb37;
+  --duck-button-hover: #ffd85e;
+  --duck-button-active: #f0b61d;
+  --duck-shadow: 0 6px 18px rgba(145, 95, 7, 0.16);
+  --duck-shadow-strong: 0 8px 24px rgba(145, 95, 7, 0.22);
+  --duck-radius: 16px;
+
+  --duck-svg-tile: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'%3E%3Cg opacity='0.9'%3E%3Cpath d='M38 90c0-16 11-28 27-28 7 0 14 2 19 7 1-11 10-20 22-20 13 0 24 10 24 24 0 13-10 23-23 23H62c-14 0-24-9-24-23z' fill='%23ffd33f' stroke='%23d79f0f' stroke-width='3'/%3E%3Cellipse cx='72' cy='81' rx='33' ry='20' fill='%23ffd949'/%3E%3Ccircle cx='98' cy='58' r='18' fill='%23ffd949' stroke='%23d79f0f' stroke-width='3'/%3E%3Ccircle cx='103' cy='54' r='2.6' fill='%232f2418'/%3E%3Cpath d='M111 59c8 0 16 3 20 7-3 4-11 7-20 7-5 0-9-1-12-3v-8c3-2 7-3 12-3z' fill='%23ff8a2a' stroke='%23d46d17' stroke-width='2.2'/%3E%3Cpath d='M112 66c8 0 15 2 18 5-4 3-10 5-18 5-5 0-8-1-11-2v-6c3-1 6-2 11-2z' fill='%23ffa54b'/%3E%3Cpath d='M59 100c4 8 13 13 26 13 7 0 13-2 18-5-7 10-19 16-34 16-17 0-31-9-38-23 4 0 7 0 10-1 6 0 13 0 18 0z' fill='%23fff0a0' opacity='0.8'/%3E%3Cpath d='M77 43c4-7 12-12 20-12 7 0 13 3 17 8-2-12-12-20-25-20-12 0-22 8-25 19 4-3 8-5 13-5z' fill='%23fff0a0' opacity='0.8'/%3E%3C/g%3E%3C/svg%3E");
+  --duck-svg-big-left: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='360' height='360' viewBox='0 0 360 360'%3E%3Cg%3E%3Cpath d='M86 220c0-43 30-76 74-76 19 0 36 6 50 17 2-30 27-54 58-54 37 0 65 28 65 64 0 35-27 62-61 62H150c-38 0-64-25-64-63z' fill='%23ffd63f' stroke='%23d19b12' stroke-width='8'/%3E%3Cellipse cx='180' cy='196' rx='89' ry='54' fill='%23ffdb4d'/%3E%3Ccircle cx='249' cy='133' r='47' fill='%23ffdb4d' stroke='%23d19b12' stroke-width='8'/%3E%3Ccircle cx='262' cy='124' r='7' fill='%23332718'/%3E%3Cpath d='M281 145c22 0 42 8 54 18-10 10-29 17-53 17-13 0-24-2-33-7v-20c8-5 19-8 32-8z' fill='%23ff8f2e' stroke='%23d56e17' stroke-width='6'/%3E%3Cpath d='M281 162c21 0 39 6 49 14-11 8-27 13-48 13-12 0-23-1-31-5v-16c8-3 18-6 30-6z' fill='%23ffa349'/%3E%3Cpath d='M145 254c11 20 34 33 67 33 19 0 36-5 50-13-17 24-47 40-84 40-42 0-76-21-94-56 11 1 18 2 28 1 11-2 23-3 33-5z' fill='%23fff1a8' opacity='0.8'/%3E%3Cg opacity='0.7'%3E%3Ccircle cx='95' cy='312' r='11' fill='%23ffffff'/%3E%3Ccircle cx='125' cy='326' r='8' fill='%23ffffff'/%3E%3Ccircle cx='150' cy='308' r='6' fill='%23ffffff'/%3E%3C/g%3E%3C/svg%3E");
+  --duck-svg-big-right: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='320' viewBox='0 0 320 320'%3E%3Cg transform='scale(-1,1) translate(-320,0)'%3E%3Cpath d='M76 194c0-35 25-62 61-62 16 0 31 5 42 14 2-24 22-45 49-45 31 0 57 24 57 55 0 29-23 53-52 53H127c-31 0-51-21-51-52z' fill='%23ffd63f' stroke='%23d19b12' stroke-width='7'/%3E%3Cellipse cx='153' cy='175' rx='72' ry='43' fill='%23ffdc50'/%3E%3Ccircle cx='211' cy='122' r='38' fill='%23ffdc50' stroke='%23d19b12' stroke-width='7'/%3E%3Ccircle cx='222' cy='114' r='6' fill='%23332718'/%3E%3Cpath d='M236 135c19 0 35 6 46 15-9 8-25 14-45 14-11 0-21-2-28-6v-17c7-4 16-6 27-6z' fill='%23ff8f2e' stroke='%23d56e17' stroke-width='5'/%3E%3Cpath d='M123 227c10 17 29 29 56 29 17 0 30-4 42-10-14 20-40 33-69 33-35 0-63-18-77-46 9 1 16 1 24 0 10-2 16-4 24-6z' fill='%23fff1a8' opacity='0.8'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+html,
+body {
+  color: var(--duck-text) !important;
+  background: linear-gradient(180deg, #fff4b6 0%, #ffe27c 100%) !important;
+}
+
+body {
+  background-image:
+    radial-gradient(circle at 10% 12%, rgba(255,255,255,.48) 0 10%, transparent 11%),
+    radial-gradient(circle at 85% 18%, rgba(255,255,255,.30) 0 9%, transparent 10%),
+    radial-gradient(circle at 20% 78%, rgba(255,255,255,.26) 0 8%, transparent 9%),
+    linear-gradient(180deg, #fff5c3 0%, #ffe68d 55%, #ffd867 100%) !important;
+  background-attachment: fixed !important;
+}
+
+/* Duck pattern overlay */
+html::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: var(--duck-svg-tile);
+  background-size: 120px 120px;
+  background-repeat: repeat;
+  opacity: 0.10;
+}
+
+/* Big decorative corner ducks */
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  z-index: 1;
+  pointer-events: none;
+  background-repeat: no-repeat;
+  background-size: contain;
+  filter: drop-shadow(0 10px 20px rgba(160, 103, 6, .22));
+}
+
+body::before {
+  left: -12px;
+  bottom: -6px;
+  width: 235px;
+  height: 235px;
+  background-image: var(--duck-svg-big-left);
+  opacity: 0.96;
+}
+
+body::after {
+  right: -8px;
+  bottom: 4px;
+  width: 180px;
+  height: 180px;
+  background-image: var(--duck-svg-big-right);
+  opacity: 0.95;
+}
+
+/* Bring site content above decorative layer */
+#app, #root, .wrapper, .content, .page__content, .top-nav {
+  position: relative;
+  z-index: 2;
+}
+
+/* Quick proof that the new CSS loaded */
+.top-nav::after {
+  content: "🦆 Rubber Duck v3";
+  position: absolute;
+  right: 14px;
+  bottom: -14px;
+  font: 700 11px/1 system-ui, sans-serif;
+  color: #6f4300;
+  background: #ffcf44;
+  border: 1px solid #ddac2c;
+  border-radius: 999px;
+  padding: 5px 10px;
+  box-shadow: 0 4px 10px rgba(145,95,7,.18);
+}
+
+/* Core shell */
+.top-nav,
+header.top-nav,
+.top-nav__main,
+nav,
+header {
+  background: linear-gradient(180deg, #ffe28f 0%, #ffd464 100%) !important;
+  color: var(--duck-text) !important;
+  border-color: #e0b353 !important;
+  box-shadow: 0 3px 14px rgba(145,95,7,.15) !important;
+}
+
+.top-nav a,
+.top-nav span,
+.top-nav button,
+header a,
+header span {
+  color: var(--duck-text) !important;
+}
+
+/* Panels */
+.panelV2,
+.panel,
+.card,
+.chatroom,
+.chatV2,
+.chatroom__channels,
+.chatroom__messages,
+.chatroom__users,
+.chatV2__sidebar,
+.chatV2__messages,
+.chatV2__members,
+.chatV2__content,
+.chatV2__container,
+.torrent-results,
+.quick-search__results,
+[class*="chatroom__"],
+[class*="chatV2__"] {
+  background: var(--duck-panel) !important;
+  color: var(--duck-text) !important;
+  border: 1px solid var(--duck-border) !important;
+  border-radius: var(--duck-radius) !important;
+  box-shadow: var(--duck-shadow) !important;
+}
+
+/* Add playful pond tint to side columns */
+.chatroom__channels,
+.chatroom__users,
+.chatV2__sidebar,
+.chatV2__members,
+[class*="chatroom__sidebar"],
+[class*="chatV2__sidebar"],
+[class*="chatV2__member"] {
+  background:
+    radial-gradient(circle at 18px 18px, rgba(255,255,255,.45) 0 10px, transparent 11px),
+    linear-gradient(180deg, rgba(255, 245, 202, .98), rgba(255, 236, 182, .98)) !important;
+}
+
+/* Headers */
+.panelV2__header,
+.panelV2__heading,
+.chatroom__header,
+.chatV2__header,
+[class*="chatroom__header"],
+[class*="chatV2__header"],
+.panelV2 > h2,
+.section__heading {
+  background:
+    linear-gradient(180deg, #ffe8ac 0%, #ffd978 100%) !important;
+  color: var(--duck-text) !important;
+  border-color: var(--duck-border) !important;
+  position: relative;
+}
+
+.panelV2__header::before,
+.panelV2__heading::before,
+.chatroom__header::before,
+.chatV2__header::before,
+.section__heading::before {
+  content: "🦆";
+  margin-right: 8px;
+}
+
+/* Generic typography */
+body,
+main,
+section,
+article,
+div,
+span,
+li,
+p,
+strong,
+small {
+  color: inherit;
+}
+
+a {
+  color: var(--duck-link) !important;
+}
+
+a:hover {
+  color: var(--duck-link-hover) !important;
+}
+
+/* Inputs */
+input:not([type="checkbox"]):not([type="radio"]),
+textarea,
+select,
+[contenteditable="true"],
+.select2-selection,
+.choices__inner,
+.top-nav input,
+.search-bar input {
+  background: #fffdf4 !important;
+  color: var(--duck-text) !important;
+  border: 1px solid #e6be6d !important;
+  border-radius: 14px !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.75) !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #9e8558 !important;
+}
+
+/* Buttons */
+button,
+.button,
+.btn,
+input[type="button"],
+input[type="submit"],
+[role="button"],
+[class*="button"],
+[class*="Button"] {
+  background: linear-gradient(180deg, #ffe07c 0%, #ffc834 100%) !important;
+  color: var(--duck-text) !important;
+  border: 1px solid #dca62a !important;
+  border-radius: 14px !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.65),
+    0 3px 10px rgba(145,95,7,.16) !important;
+  transition: transform .15s ease, box-shadow .15s ease, background-color .15s ease !important;
+}
+
+button:hover,
+.button:hover,
+.btn:hover,
+input[type="button"]:hover,
+input[type="submit"]:hover,
+[role="button"]:hover,
+[class*="button"]:hover,
+[class*="Button"]:hover {
+  background: linear-gradient(180deg, #ffe890 0%, #ffd34f 100%) !important;
+  transform: translateY(-1px);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.75),
+    0 6px 14px rgba(145,95,7,.18) !important;
+}
+
+button:active,
+.button:active,
+.btn:active,
+input[type="button"]:active,
+input[type="submit"]:active {
+  background: linear-gradient(180deg, #ffd35d 0%, #efb71d 100%) !important;
+  transform: translateY(0);
+}
+
+/* Make important buttons extra ducky */
+button[type="submit"],
+input[type="submit"],
+.button--primary,
+.btn-primary,
+[class*="send-button"],
+[class*="sendButton"],
+[class*="chatV2__send"],
+.message-form button:last-child,
+.chatbox button:last-child {
+  position: relative;
+  padding-left: 14px !important;
+  padding-right: 18px !important;
+}
+
+button[type="submit"]::before,
+input[type="submit"]::before,
+.button--primary::before,
+.btn-primary::before,
+[class*="send-button"]::before,
+[class*="sendButton"]::before,
+[class*="chatV2__send"]::before,
+.message-form button:last-child::before,
+.chatbox button:last-child::before {
+  content: "🦆 ";
+}
+
+/* Active / selected / pills */
+.active,
+[aria-current="page"],
+[aria-selected="true"],
+[data-state="active"],
+.pagination .active,
+[class*="--active"] {
+  background: linear-gradient(180deg, #ffe38b 0%, #ffcd49 100%) !important;
+  color: var(--duck-text) !important;
+  border-radius: 12px !important;
+}
+
+/* Tables / result rows */
+.data-table,
+table,
+.torrent-results {
+  background: var(--duck-panel) !important;
+  color: var(--duck-text) !important;
+  border-color: var(--duck-border) !important;
+}
+
+table thead,
+.data-table thead,
+.data-table th,
+.torrent-results thead {
+  background: linear-gradient(180deg, #ffe7a2 0%, #ffd972 100%) !important;
+  color: var(--duck-text) !important;
+}
+
+table td,
+table th,
+.data-table td,
+.data-table th,
+.torrent-results td,
+.torrent-results th {
+  border-color: #edd49a !important;
+}
+
+table tbody tr:nth-child(odd),
+.data-table tr:nth-child(odd) {
+  background: rgba(255, 245, 215, .82) !important;
+}
+
+table tbody tr:nth-child(even),
+.data-table tr:nth-child(even) {
+  background: rgba(255, 237, 188, .88) !important;
+}
+
+table tbody tr:hover,
+.data-table tr:hover,
+.torrent-results tbody tr:hover {
+  background: rgba(255, 220, 107, .22) !important;
+}
+
+/* Message area */
+.chatV2__message,
+.chatroom__message,
+[class*="chatV2__message"],
+[class*="chatroom__message"] {
+  color: var(--duck-text) !important;
+}
+
+.chatV2__message img,
+.chatroom__message img,
+img {
+  border-radius: 12px;
+}
+
+/* News/announcement footer-like blocks */
+footer,
+.footer,
+[class*="news"],
+[class*="announcement"] {
+  background: rgba(255, 248, 223, .94) !important;
+  border-color: var(--duck-border) !important;
+  color: var(--duck-text) !important;
+}
+
+/* Avatars get toy-like ring */
+img.avatar,
+.avatar img,
+.user-tag img,
+[class*="avatar"] img {
+  border-radius: 14px !important;
+  box-shadow: 0 0 0 2px #ffd25c, 0 0 0 4px #fff3bf !important;
+}
+
+/* Scrollbars */
+::-webkit-scrollbar {
+  width: 11px;
+  height: 11px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fff0bf;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #efc15e, #d8a241);
+  border: 2px solid #fff0bf;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #e3b34a, #c88f2d);
+}
+
+/* Focus */
+:focus-visible {
+  outline: 2px solid #c47f00 !important;
+  outline-offset: 2px;
+}
+
+/* Responsive: shrink decorative ducks on smaller screens */
+@media (max-width: 1100px) {
+  body::before {
+    width: 165px;
+    height: 165px;
+  }
+  body::after {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+@media (max-width: 720px) {
+  html::before {
+    opacity: 0.08;
+  }
+  .top-nav::after {
+    right: 8px;
+    bottom: -11px;
+    font-size: 10px;
+  }
+  body::before {
+    width: 110px;
+    height: 110px;
+    left: -16px;
+  }
+  body::after {
+    width: 86px;
+    height: 86px;
+    right: -10px;
+  }
+}
